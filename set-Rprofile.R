@@ -11,8 +11,6 @@ options(
 
 options(useFancyQuotes = FALSE)
 
-invisible(Sys.setlocale("LC_ALL", "en_GB.UTF-8"))
-
 sunrise <- bioRad::sunrise(date = Sys.Date(), lon = 2.3, lat = 48.8)
 sunset <- bioRad::sunset(date = Sys.Date(), lon = 2.3, lat = 48.8)
 
