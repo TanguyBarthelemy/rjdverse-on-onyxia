@@ -2,6 +2,7 @@
 
 lines_to_add <- c(
     '
+Sys.setenv(GITHUB_PAT = Sys.getenv("GITHUB_TANGUYBARTHELEMY"))
 source("https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/install.R")
 options(
     warnPartialMatchAttr = TRUE,
