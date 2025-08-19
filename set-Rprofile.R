@@ -2,6 +2,7 @@
 
 lines_to_add <- c(
     '
+source("https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/install.R")
 options(
     warnPartialMatchAttr = TRUE,
     warnPartialMatchDollar = TRUE,
