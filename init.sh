@@ -15,5 +15,4 @@ git clone https://github.com/TanguyBarthelemy/rjd3highfreq.git
 git clone https://github.com/TanguyBarthelemy/rjd3stl.git
 git clone https://github.com/TanguyBarthelemy/rjd3x11plus.git
 
-Rscript "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/install.R"
 Rscript "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/set-Rprofile.R"
