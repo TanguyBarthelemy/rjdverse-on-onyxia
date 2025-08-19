@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 
 install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))
 
