@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript
+
 # Configuration environment ----------------------------------------------------
 
 lines_to_add <- c(
