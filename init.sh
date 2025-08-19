@@ -1,3 +1,6 @@
+git config --global user.name "Tanguy BARTHELEMY"
+git config --global user.email tanguy.barthelemy@insee.fr
+git config --global credential.username TanguyBarthelemy
 git config --global credential.helper "cache --timeout=10000000"
 
 git clone https://github.com/TanguyBarthelemy/rjd3toolkit.git
