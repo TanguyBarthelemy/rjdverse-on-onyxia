@@ -4,7 +4,7 @@
 
 lines_to_add <- '
 Sys.setenv(GITHUB_PAT = Sys.getenv("GITHUB_TANGUYBARTHELEMY"))
-source("https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/install.R")
+source(file.path(Sys.getenv("HOME"), "install.R"))
 options(
     warnPartialMatchAttr = TRUE,
     warnPartialMatchDollar = TRUE,
