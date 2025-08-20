@@ -2,8 +2,7 @@
 
 # Configuration environment ----------------------------------------------------
 
-lines_to_add <- c(
-    '
+lines_to_add <- '
 Sys.setenv(GITHUB_PAT = Sys.getenv("GITHUB_TANGUYBARTHELEMY"))
 source("https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/install.R")
 options(
@@ -27,7 +26,6 @@ setHook("rstudio.sessionInit", function(newSession) {
         }
     }
 }, action = "append")
-    '
-)
+'
 
 write(lines_to_add, file = file.path(Sys.getenv("HOME"), ".Rprofile"), append = TRUE)
