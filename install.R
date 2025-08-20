@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
-install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))
+library("utils")
+
+install.packages("remotes", repos = c(CRAN = "https://cloud.r-project.org"))
 
 remotes::install_github("rjdverse/rjd3toolkit")
 remotes::install_github("rjdverse/rjdemetra")
