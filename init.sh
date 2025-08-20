@@ -17,5 +17,6 @@ git clone https://TanguyBarthelemy:${GITHUB_TANGUYBARTHELEMY}@github.com/TanguyB
 #git clone https://github.com/TanguyBarthelemy/rjd3stl.git
 #git clone https://github.com/TanguyBarthelemy/rjd3x11plus.git
 
-curl -o config.R 'https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/set-Rprofile.R'
-Rscript config.R
+curl -o "${HOME}/config.R" 'https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/set-Rprofile.R'
+curl -o "${HOME}/install.R" 'https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/install.R'
+Rscript "${HOME}/config.R"
