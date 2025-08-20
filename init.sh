@@ -19,5 +19,5 @@ git clone https://TanguyBarthelemy:${GITHUB_TANGUYBARTHELEMY}@github.com/TanguyB
 
 curl -o "${HOME}/config.R" 'https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/set-Rprofile.R'
 curl -o "${HOME}/install.R" 'https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/install.R'
-Rscript "${HOME}/install.R"
-Rscript "${HOME}/config.R"
+#Rscript "${HOME}/install.R"
+#Rscript "${HOME}/config.R"
