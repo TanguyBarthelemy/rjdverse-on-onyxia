@@ -2,7 +2,7 @@ git config --global user.name "Tanguy BARTHELEMY"
 git config --global user.email tanguy.barthelemy@insee.fr
 git config --global credential.username TanguyBarthelemy
 
-git clone https://${GITHUB_TANGUYBARTHELEMY}@github.com/TanguyBarthelemy/rjd3toolkit.git
+git clone https://TanguyBarthelemy:${GITHUB_TANGUYBARTHELEMY}@github.com/TanguyBarthelemy/rjd3toolkit.git
 #git clone https://github.com/TanguyBarthelemy/rjdemetra.git
 #git clone https://github.com/TanguyBarthelemy/rjd3bench.git
 #git clone https://github.com/TanguyBarthelemy/rjd3providers.git
@@ -17,5 +17,5 @@ git clone https://${GITHUB_TANGUYBARTHELEMY}@github.com/TanguyBarthelemy/rjd3too
 #git clone https://github.com/TanguyBarthelemy/rjd3stl.git
 #git clone https://github.com/TanguyBarthelemy/rjd3x11plus.git
 
-curl -o config.R 'https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/set-Rprofile.R
+curl -o config.R 'https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/refs/heads/main/set-Rprofile.R'
 Rscript config.R
