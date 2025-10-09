@@ -65,3 +65,10 @@ setHook(\"rstudio.sessionInit\", function(newSession) {
 # Installer air
 curl -LsSf https://github.com/posit-dev/air/releases/latest/download/air-installer.sh | sh
 source $HOME/.local/bin/env
+
+# Install Fira Code
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+curl -fLO https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip
+unzip -o Fira_Code_v6.2.zip
+fc-cache -f -v
