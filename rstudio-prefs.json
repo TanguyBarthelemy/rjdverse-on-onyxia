@@ -63,5 +63,13 @@
     "copilot_enabled": false,
     "reformat_on_save": true,
     "code_formatter": "external",
-    "code_formatter_external_command": "/home/onyxia/.local/bin/air"
+    "code_formatter_external_command": "/home/onyxia/.local/bin/air", 
+    "server_editor_font_enabled": true,
+    "server_editor_font": "Fira Code",
+    "show_terminal_tab": true,
+    "enable_splash_screen": false,
+    "rainbow_parentheses": false,
+    "restore_project_r_version": false,
+    "restore_source_document_cursor_position": false,
+    "reformat_on_save": true 
 }
