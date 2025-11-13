@@ -14,11 +14,11 @@ curl -fsSL "$REMOTE_PREFS_URL" -o "$RSTUDIO_PREFS_FILE"
 chown ${USERNAME}:${GROUPNAME} "$RSTUDIO_PREFS_FILE"
 
 # Add new locales
-sudo locale-gen en_GB
-sudo locale-gen en_GB.UTF-8
-sudo locale-gen fr_FR
-sudo locale-gen fr_FR.UTF-8
-sudo update-locale
+locale-gen en_GB
+locale-gen en_GB.UTF-8
+locale-gen fr_FR
+locale-gen fr_FR.UTF-8
+update-locale
 
 # Installer des packages supplémentaires
 Rscript -e "
