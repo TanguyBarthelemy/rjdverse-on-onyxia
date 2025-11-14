@@ -2,6 +2,8 @@ git config --global user.name "Tanguy BARTHELEMY"
 git config --global user.email tanguy.barthelemy@insee.fr
 git config --global credential.username TanguyBarthelemy
 
+export GITHUB_PAT="${GITHUB_TANGUYBARTHELEMY}"
+
 git clone https://TanguyBarthelemy:${GITHUB_TANGUYBARTHELEMY}@github.com/TanguyBarthelemy/rjd3toolkit.git
 git clone https://TanguyBarthelemy:${GITHUB_TANGUYBARTHELEMY}@github.com/TanguyBarthelemy/rjdemetra.git
 git clone https://TanguyBarthelemy:${GITHUB_TANGUYBARTHELEMY}@github.com/TanguyBarthelemy/rjd3bench.git
