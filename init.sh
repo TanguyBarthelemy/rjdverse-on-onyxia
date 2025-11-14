@@ -19,7 +19,7 @@ git config --global user.email tanguy.barthelemy@insee.fr
 git config --global credential.username TanguyBarthelemy
 export GITHUB_PAT1="${GITHUB_TANGUYBARTHELEMY}"
 echo 'export GITHUB_PAT2="${GITHUB_TANGUYBARTHELEMY}"' >> ~/.bashrc
-echo 'export GITHUB_PAT3="${GITHUB_TANGUYBARTHELEMY}"' >> ~/.zshrc"
+echo 'export GITHUB_PAT3="${GITHUB_TANGUYBARTHELEMY}"' >> ~/.zshrc
 
 # Add new locales
 locale-gen en_GB
