@@ -13,6 +13,12 @@ mkdir -p "$RSTUDIO_CONFIG_DIR"
 curl -fsSL "$REMOTE_PREFS_URL" -o "$RSTUDIO_PREFS_FILE"
 chown ${USERNAME}:${GROUPNAME} "$RSTUDIO_PREFS_FILE"
 
+# Préparer Git
+git config --global user.name "Tanguy BARTHELEMY"
+git config --global user.email tanguy.barthelemy@insee.fr
+git config --global credential.username TanguyBarthelemy
+export GITHUB_PAT="${GITHUB_TANGUYBARTHELEMY}"
+
 # Add new locales
 locale-gen en_GB
 locale-gen en_GB.UTF-8
