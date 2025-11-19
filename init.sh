@@ -29,20 +29,13 @@ update-locale
 
 # Installer des packages supplémentaires
 Rscript -e "
-custom_lib <- file.path(Sys.getenv(\"HOME\"), \"renv\", \"library\")
-if (!dir.exists(custom_lib)) {
-    dir.create(custom_lib, recursive = TRUE)
-}
-
-install.packages(\"BiocManager\", repos = \"https://cloud.r-project.org\", lib = custom_lib)
-BiocManager::install(\"rhdf5\", ask = FALSE, lib = custom_lib)
-install.packages(c(\"bioRad\", \"rstudioapi\"), repos = \"https://cloud.r-project.org\", lib = custom_lib)
+install.packages(\"BiocManager\", repos = \"https://cloud.r-project.org\")
+BiocManager::install(\"rhdf5\", ask = FALSE)
+install.packages(c(\"bioRad\", \"rstudioapi\"), repos = \"https://cloud.r-project.org\")
 "
 
 # Créer un .Rprofile
 echo "
-.libPaths(file.path(Sys.getenv(\"HOME\"), \"renv\", \"library\"))
-
 # warn on partial matches
 options(
     warnPartialMatchAttr = TRUE,
