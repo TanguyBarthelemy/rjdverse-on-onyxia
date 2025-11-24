@@ -6,20 +6,22 @@ mkdir -p "${init_dir}"
 
 chown -R onyxia:users ${init_dir}/
 
-echo "v1.2"
+echo "v1.3"
 
 download_script() {
     local script_url="$1"
     local script_name="$2"
     
     local dest="${init_dir}/${script_name}"
+	
+	ls init_dir
+	
 	echo "The dest : $dest"
 
     echo "Téléchargement : ${script_url}"
-    curl -fsSL "${script_url}" -o "${dest}" || {
-        echo "Erreur : impossible de télécharger ${script_name}"
-        exit 1
-    }
+    curl -fsSL "${script_url}" -o "${dest}"
+	
+	ls init_dir
 
     chmod +x "${dest}"
     echo "${dest}"
