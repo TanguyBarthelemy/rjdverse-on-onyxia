@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-init_dir="${HOME}/init"
+init_dir="/home/onyxia/init"
 mkdir -p "${init_dir}"
 
 chown -R onyxia:users ${init_dir}/
 
-echo "v1.3"
+echo "v1.4"
 
 download_script() {
     local script_url="$1"
