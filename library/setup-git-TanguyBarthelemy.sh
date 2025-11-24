@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -euo pipefail
 
 # Préparer Git
 git config --global user.name "Tanguy BARTHELEMY"
