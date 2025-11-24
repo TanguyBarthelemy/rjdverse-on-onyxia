@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-local init_dir="${HOME}/.cache/init"
+init_dir="${HOME}/.cache/init"
 mkdir -p "${init_dir}"
 
 download_script() {
