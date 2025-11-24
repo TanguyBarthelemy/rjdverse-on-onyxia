@@ -1,31 +1,34 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
 init_dir="/home/onyxia/work/init"
 mkdir -p "${init_dir}"
+chown -R onyxia:users "${init_dir}"
 
-chown -R onyxia:users ${init_dir}/
-
-echo "v1.6"
+echo "v1.7"
 
 download_script() {
     local script_url="$1"
     local script_name="$2"
-    
-    local dest="${init_dir}/${script_name}"
-	
-	ls $init_dir
-	
-	echo "The dest : $dest"
 
-    echo "Téléchargement : ${script_url}"
+    local dest="${init_dir}/${script_name}"
+
+    echo "Téléchargement dans : ${dest}"
     curl -fsSL "${script_url}" -o "${dest}"
-	
-	ls $init_dir
+
+    # Convertir CRLF → LF
+    sed -i 's/\r$//' "${dest}"
 
     chmod +x "${dest}"
     echo "${dest}"
 }
+
+git_script=$(download_script \
+    "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-git-TanguyBarthelemy.sh" \
+    "setup-git.sh")
+
+echo "Exécution de : ${git_script}"
+bash "${git_script}"
 
 git_script=$(download_script "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-git-TanguyBarthelemy.sh" "setup-git.sh")
 echo "$git_script"
