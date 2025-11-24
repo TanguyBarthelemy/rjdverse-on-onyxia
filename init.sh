@@ -1,81 +1,39 @@
 #!/usr/bin/env bash
 set -e
 
-# Variables personnalisables
-USERNAME=${USERNAME:-rstudio}
-GROUPNAME=${GROUPNAME:-rstudio}
-RSTUDIO_CONFIG_DIR="${HOME}/.config/rstudio"
-RSTUDIO_PREFS_FILE="${RSTUDIO_CONFIG_DIR}/rstudio-prefs.json"
+local init_dir="${HOME}/.cache/init"
+mkdir -p "${init_dir}"
 
-# URL du fichier distant sur GitHub (à adapter à ton dépôt)
-REMOTE_PREFS_URL="https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/rstudio-prefs.json"
-mkdir -p "$RSTUDIO_CONFIG_DIR"
-curl -fsSL "$REMOTE_PREFS_URL" -o "$RSTUDIO_PREFS_FILE"
-chown ${USERNAME}:${GROUPNAME} "$RSTUDIO_PREFS_FILE"
+download_script() {
+    local script_url="$1"
+    local script_name="$2"
+    
+    local dest="${init_dir}/${script_name}"
 
-# Préparer Git
-git config --global user.name "Tanguy BARTHELEMY"
-git config --global user.email tanguy.barthelemy@insee.fr
-git config --global credential.username TanguyBarthelemy
-echo "GITHUB_PAT=\${GITHUB_TANGUYBARTHELEMY}" >> "${HOME}/.Renviron"
-
-
-# Add new locales
-locale-gen en_GB
-locale-gen en_GB.UTF-8
-locale-gen fr_FR
-locale-gen fr_FR.UTF-8
-update-locale
-
-# Installer des packages supplémentaires
-Rscript -e "
-install.packages(\"BiocManager\", repos = \"https://cloud.r-project.org\")
-BiocManager::install(\"rhdf5\", ask = FALSE)
-install.packages(c(\"bioRad\", \"rstudioapi\"), repos = \"https://cloud.r-project.org\")
-"
-
-# Créer un .Rprofile
-echo "
-# warn on partial matches
-options(
-    warnPartialMatchAttr = TRUE,
-    warnPartialMatchDollar = TRUE,
-    warnPartialMatchArgs = TRUE,
-    showErrorCalls = TRUE
-)
-
-# Warnings are errors
-# options(warn = 2L)
-
-# Limit max element displayed
-# options(max.print = 50L)
-
-# Fancy quotes are annoying and lead to
-# copy + paste bugs / frustrations
-options(useFancyQuotes = FALSE)
-
-invisible(Sys.setlocale(\"LC_ALL\", \"en_GB.UTF-8\"))
-
-sunrise <- bioRad::sunrise(date = Sys.Date(), lon = 2.3, lat = 48.8)
-sunset <- bioRad::sunset(date = Sys.Date(), lon = 2.3, lat = 48.8)
-
-setHook(\"rstudio.sessionInit\", function(newSession) {
-    if (newSession) {
-        
-        if (Sys.time() < sunrise || Sys.time() > sunset) {
-            rstudioapi::applyTheme(\"Material\")
-        } else {
-            rstudioapi::applyTheme(\"Textmate (default)\")
-        }
+    echo "Téléchargement : ${script_url}"
+    curl -fsSL "${script_url}" -o "${dest}" || {
+        echo "Erreur : impossible de télécharger ${script_name}"
+        exit 1
     }
-}, action = \"append\")
 
-" >> "${HOME}/.Rprofile"
+    chmod +x "${dest}"
+    echo "${dest}"
+}
 
-# Installer air
-curl -LsSf https://github.com/posit-dev/air/releases/latest/download/air-installer.sh | sh
-source $HOME/.local/bin/env
+git_script=$(download_script "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-git-TanguyBarthelemy.sh" "setup-git.sh")
+"$git_script" --verbose
 
-# Install Fira Code
-apt-get update
-apt install fonts-firacode
+rstudio_script=$(download_script "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-rstudio-prefs.sh" "setup-rstudio-prefs.sh")
+"$rstudio_script" --verbose
+
+locales_script=$(download_script "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-locales.sh" "setup-locales.sh")
+"$locales_script" --verbose
+
+rprofile_script=$(download_script "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-rprofile.sh" "setup-rprofile.sh")
+"$rprofile_script" --verbose
+
+air_script=$(download_script "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-air.sh" "setup-air.sh")
+"$air_script" --verbose
+
+fira_script=$(download_script "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-firacode.sh" "setup-fira.sh")
+"$fira_script" --verbose
