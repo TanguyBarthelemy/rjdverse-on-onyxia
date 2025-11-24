@@ -11,6 +11,7 @@ download_script() {
     local script_name="$2"
     
     local dest="${init_dir}/${script_name}"
+	echo "The dest : $dest"
 
     echo "Téléchargement : ${script_url}"
     curl -fsSL "${script_url}" -o "${dest}" || {
