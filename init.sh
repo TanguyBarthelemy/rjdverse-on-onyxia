@@ -4,7 +4,7 @@ set -e
 init_dir="${HOME}/.cache/init"
 mkdir -p "${init_dir}"
 
-chown -R onyxia:users "${init_dir}"
+chown -R onyxia:users ${init_dir}/
 
 download_script() {
     local script_url="$1"
