@@ -4,17 +4,25 @@ init_dir="/home/onyxia/work/init"
 mkdir -p "${init_dir}"
 chown -R onyxia:users "${init_dir}"
 
-echo "v1.8"
+echo "v1.9"
 
 download_script() {
     local script_url="$1"
     local script_name="$2"
 
     local dest="${init_dir}/${script_name}"
+	
+	echo "\nContent:\n"
+	ls ${init_dir}
+	echo "\n"
 
     echo "Telechargement dans : ${dest}"
     curl -fsSL "${script_url}" -o "${dest}"
 
+	echo "\nContent after download:\n"
+	ls ${init_dir}
+	echo "\n"
+	
     # Convertir CRLF → LF
     sed -i 's/\r$//' "${dest}"
 
