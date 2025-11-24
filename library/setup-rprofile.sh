@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-set -e
+#!/bin/sh
 
 # Installer des packages supplémentaires
 Rscript -e "

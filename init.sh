@@ -1,11 +1,10 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/sh
 
 init_dir="/home/onyxia/work/init"
 mkdir -p "${init_dir}"
 chown -R onyxia:users "${init_dir}"
 
-echo "v1.7"
+echo "v1.8"
 
 download_script() {
     local script_url="$1"
@@ -13,7 +12,7 @@ download_script() {
 
     local dest="${init_dir}/${script_name}"
 
-    echo "Téléchargement dans : ${dest}"
+    echo "Telechargement dans : ${dest}"
     curl -fsSL "${script_url}" -o "${dest}"
 
     # Convertir CRLF → LF
@@ -28,7 +27,7 @@ git_script=$(download_script \
     "setup-git.sh")
 
 echo "Exécution de : ${git_script}"
-bash "${git_script}"
+"${git_script}"
 
 git_script=$(download_script "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-git-TanguyBarthelemy.sh" "setup-git.sh")
 echo "$git_script"

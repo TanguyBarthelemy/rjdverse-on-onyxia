@@ -1,3 +1,4 @@
+#!/bin/sh
 
 git clone https://TanguyBarthelemy:${GITHUB_TANGUYBARTHELEMY}@github.com/TanguyBarthelemy/rjd3toolkit.git
 git clone https://TanguyBarthelemy:${GITHUB_TANGUYBARTHELEMY}@github.com/TanguyBarthelemy/rjdemetra.git

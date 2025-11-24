@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-set -e
+#!/bin/sh
 
 # Add new locales
 locale-gen en_GB

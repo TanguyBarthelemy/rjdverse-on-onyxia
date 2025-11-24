@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-set -e
+#!/bin/sh
 
 # Préparer Git
 git config --global user.name "Tanguy BARTHELEMY"
