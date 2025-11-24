@@ -23,7 +23,8 @@ download_script() {
 }
 
 git_script=$(download_script "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-git-TanguyBarthelemy.sh" "setup-git.sh")
-"$git_script" --verbose
+echo "$git_script"
+"$git_script"
 
 rstudio_script=$(download_script "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-rstudio-prefs.sh" "setup-rstudio-prefs.sh")
 "$rstudio_script" --verbose
