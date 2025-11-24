@@ -6,7 +6,7 @@ mkdir -p "${init_dir}"
 chown -R onyxia:users "${init_dir}"
 
 cd ${init_dir}
-echo "v1.14"
+echo "v1.14.1"
 
 curl -fsSL -O "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-git-TanguyBarthelemy.sh"
 curl -fsSL -O "https://raw.githubusercontent.com/TanguyBarthelemy/rjdverse-on-onyxia/main/library/setup-rstudio-prefs.sh"
