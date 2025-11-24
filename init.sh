@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-init_dir="/home/onyxia/init"
+init_dir="/home/onyxia/work/init"
 mkdir -p "${init_dir}"
 
 chown -R onyxia:users ${init_dir}/
 
-echo "v1.4"
+echo "v1.6"
 
 download_script() {
     local script_url="$1"
@@ -14,14 +14,14 @@ download_script() {
     
     local dest="${init_dir}/${script_name}"
 	
-	ls init_dir
+	ls $init_dir
 	
 	echo "The dest : $dest"
 
     echo "Téléchargement : ${script_url}"
     curl -fsSL "${script_url}" -o "${dest}"
 	
-	ls init_dir
+	ls $init_dir
 
     chmod +x "${dest}"
     echo "${dest}"
