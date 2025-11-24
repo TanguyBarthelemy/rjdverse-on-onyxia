@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-init_dir="${HOME}/.cache/init"
+init_dir="${HOME}/init"
 mkdir -p "${init_dir}"
 
 chown -R onyxia:users ${init_dir}/
+
+echo "v1.2"
 
 download_script() {
     local script_url="$1"
