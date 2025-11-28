@@ -7,4 +7,5 @@ locale-gen fr_FR
 locale-gen fr_FR.UTF-8
 update-locale
 
+apt-get update
 apt-get install hunspell-fr
