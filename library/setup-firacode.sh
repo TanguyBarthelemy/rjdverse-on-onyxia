@@ -2,4 +2,4 @@
 
 # Install Fira Code
 apt-get update
-apt install fonts-firacode
+apt -y install fonts-firacode
