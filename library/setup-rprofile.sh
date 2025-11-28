@@ -34,11 +34,17 @@ sunset <- bioRad::sunset(date = Sys.Date(), lon = 2.3, lat = 48.8)
 
 setHook(\"rstudio.sessionInit\", function(newSession) {
     if (newSession) {
-        
         if (Sys.time() < sunrise || Sys.time() > sunset) {
             rstudioapi::applyTheme(\"Material\")
         } else {
             rstudioapi::applyTheme(\"Textmate (default)\")
+        }
+
+        PKG_DIR <- Sys.getenv(\"PKG_DIR\")
+        
+        if (nzchar(PKG_DIR)) {
+            message(\"Activation du projet RStudio\")
+            rstudioapi::openProject(PKG_DIR)
         }
     }
 }, action = \"append\")
