@@ -42,7 +42,7 @@ setHook(\"rstudio.sessionInit\", function(newSession) {
 
         PROJ_DIR <- Sys.getenv(\"PROJ_DIR\")
         
-        if (nzchar(PROJ_DIR)) {
+        if (nzchar(PROJ_DIR) && !identical(PROJ_DIR, getwd())) {
             message(\"Activation du projet RStudio\")
             rstudioapi::openProject(PROJ_DIR)
         }
