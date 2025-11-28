@@ -40,11 +40,11 @@ setHook(\"rstudio.sessionInit\", function(newSession) {
             rstudioapi::applyTheme(\"Textmate (default)\")
         }
 
-        PKG_DIR <- Sys.getenv(\"PKG_DIR\")
+        PROJ_DIR <- Sys.getenv(\"PROJ_DIR\")
         
-        if (nzchar(PKG_DIR)) {
+        if (nzchar(PROJ_DIR)) {
             message(\"Activation du projet RStudio\")
-            rstudioapi::openProject(PKG_DIR)
+            rstudioapi::openProject(PROJ_DIR)
         }
     }
 }, action = \"append\")
