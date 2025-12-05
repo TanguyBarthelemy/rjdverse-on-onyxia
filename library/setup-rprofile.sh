@@ -41,6 +41,7 @@ setHook(\"rstudio.sessionInit\", function(newSession) {
         }
 
         PROJ_DIR <- Sys.getenv(\"PROJ_DIR\")
+        if (nzchar(PROJ_DIR)) PROJ_DIR <- normalizePath(PROJ_DIR)
         print(PROJ_DIR)
         print(getwd())
         Sys.sleep(20)
