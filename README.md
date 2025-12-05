@@ -4,4 +4,4 @@
 
 [![Onyxia](https://img.shields.io/badge/Empty-session-orange?logo=R)](https://datalab.sspcloud.fr/launcher/ide/rstudio?name=TB-Template&version=2.3.18&s3=region-79669f20&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FTanguyBarthelemy%2Fonyxia-setup%2Fmain%2Finit-empty.sh»&vault.secret=«PAT»&autoLaunch=true)
 
-[![Onyxia](https://img.shields.io/badge/dev-releaser-green?logo=R)](https://datalab.sspcloud.fr/launcher/ide/rstudio?name=TB-Template&version=2.3.18&s3=region-79669f20&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FTanguyBarthelemy%2Fonyxia-setup%2Fmain%2Finit-project.sh»&init.personalInitArgs=«TanguyBarthelemy%20releaser»&vault.secret=«PAT»&autoLaunch=true)
+[![Onyxia](https://img.shields.io/badge/dev-releaser-green?logo=R)](https://datalab.sspcloud.fr/launcher/ide/rstudio?name=releaser&version=2.3.18&s3=region-79669f20&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FTanguyBarthelemy%2Fonyxia-setup%2Fmain%2Finit-project.sh»&init.personalInitArgs=«TanguyBarthelemy%20releaser»&vault.secret=«PAT»&autoLaunch=true)
