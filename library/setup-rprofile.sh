@@ -4,8 +4,8 @@
 Rscript -e "
 #install.packages(\"BiocManager\", repos = \"https://cloud.r-project.org\")
 #BiocManager::install(\"rhdf5\", ask = FALSE)
-install.packages(\"bioRad\", repos = \"https://cloud.r-project.org\")
-#install.packages(\"rstudioapi\", repos = \"https://cloud.r-project.org\")
+#install.packages(\"bioRad\", repos = \"https://cloud.r-project.org\")
+install.packages(c(\"sp\", \"suntools\", \"rstudioapi\"), repos = \"https://cloud.r-project.org\")
 "
 
 # Créer un .Rprofile
@@ -30,8 +30,28 @@ options(useFancyQuotes = FALSE)
 
 invisible(Sys.setlocale(\"LC_ALL\", \"en_GB.UTF-8\"))
 
-sunrise <- bioRad::sunrise(date = Sys.Date(), lon = 2.3, lat = 48.8)
-sunset <- bioRad::sunset(date = Sys.Date(), lon = 2.3, lat = 48.8)
+locations <- data.frame(lon = 2.3, lat = 48.8)
+locations <- sp::SpatialPoints(locations, proj4string = sp::CRS(\"+proj=longlat +datum=WGS84\"))
+datetime <- as.POSIXct(Sys.Date(), tz = \"UTC\")
+suntimes <- suntools::crepuscule(
+    crds = locations, 
+    dateTime = datetime, 
+    solarDep = 0.268, 
+    direction = \"dawn\", 
+    POSIXct.out = TRUE
+)
+sunrise <- suntimes$time
+suntimes <- suntools::crepuscule(
+    crds = locations, 
+    dateTime = datetime, 
+    solarDep = 0.268, 
+    direction = \"dusk\", 
+    POSIXct.out = TRUE
+)
+sunset <- suntimes$time
+
+#sunrise <- bioRad::sunrise(date = Sys.Date(), lon = 2.3, lat = 48.8)
+#sunset <- bioRad::sunset(date = Sys.Date(), lon = 2.3, lat = 48.8)
 
 setHook(\"rstudio.sessionInit\", function(newSession) {
     if (newSession) {
