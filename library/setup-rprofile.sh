@@ -54,7 +54,9 @@ setHook(\"rstudio.sessionInit\", function(newSession) {
         } else {
             rstudioapi::applyTheme(\"Textmate (default)\")
         }
-
+        
+        rm(locations, suntimes, sunrise, sunset, datetime)
+        
         PROJ_DIR <- Sys.getenv(\"PROJ_DIR\")
         if (nzchar(PROJ_DIR)) PROJ_DIR <- normalizePath(PROJ_DIR)
 
