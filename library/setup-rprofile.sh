@@ -2,8 +2,8 @@
 
 # Installer des packages supplémentaires
 Rscript -e "
-install.packages(\"BiocManager\", repos = \"https://cloud.r-project.org\")
-BiocManager::install(\"rhdf5\", ask = FALSE)
+#install.packages(\"BiocManager\", repos = \"https://cloud.r-project.org\")
+#BiocManager::install(\"rhdf5\", ask = FALSE)
 install.packages(\"bioRad\", repos = \"https://cloud.r-project.org\")
 #install.packages(\"rstudioapi\", repos = \"https://cloud.r-project.org\")
 "
