@@ -2,9 +2,6 @@
 
 # Installer des packages supplémentaires
 Rscript -e "
-#install.packages(\"BiocManager\", repos = \"https://cloud.r-project.org\")
-#BiocManager::install(\"rhdf5\", ask = FALSE)
-#install.packages(\"bioRad\", repos = \"https://cloud.r-project.org\")
 install.packages(c(\"sp\", \"suntools\", \"rstudioapi\"), repos = \"https://cloud.r-project.org\")
 "
 
@@ -49,9 +46,6 @@ suntimes <- suntools::crepuscule(
     POSIXct.out = TRUE
 )
 sunset <- suntimes$time
-
-#sunrise <- bioRad::sunrise(date = Sys.Date(), lon = 2.3, lat = 48.8)
-#sunset <- bioRad::sunset(date = Sys.Date(), lon = 2.3, lat = 48.8)
 
 setHook(\"rstudio.sessionInit\", function(newSession) {
     if (newSession) {
