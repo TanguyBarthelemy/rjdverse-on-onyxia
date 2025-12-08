@@ -37,7 +37,7 @@ suntimes <- suntools::crepuscule(
     direction = \"dawn\", 
     POSIXct.out = TRUE
 )
-sunrise <- suntimes$time
+sunrise <- suntimes\$time
 suntimes <- suntools::crepuscule(
     crds = locations, 
     dateTime = datetime, 
@@ -45,7 +45,7 @@ suntimes <- suntools::crepuscule(
     direction = \"dusk\", 
     POSIXct.out = TRUE
 )
-sunset <- suntimes$time
+sunset <- suntimes\$time
 
 setHook(\"rstudio.sessionInit\", function(newSession) {
     if (newSession) {
