@@ -38,11 +38,17 @@ chmod +x "setup-air.sh"
 chmod +x "setup-firacode.sh"
 
 "./setup-git-TanguyBarthelemy.sh"
+echo "setup git ok"
 "./setup-rstudio-prefs.sh"
+echo "setup prefs ok"
 "./setup-locales.sh"
+echo "setup locales ok"
 "./setup-rprofile.sh"
+echo "setup rprofile ok"
 "./setup-air.sh"
+echo "setup air ok"
 "./setup-firacode.sh"
+echo "setup fira ok"
 
 cd "/home/onyxia/work"
 git clone https://TanguyBarthelemy:${GITHUB_TANGUYBARTHELEMY}@github.com/${GIT_ACCOUNT}/${GIT_REPO}.git

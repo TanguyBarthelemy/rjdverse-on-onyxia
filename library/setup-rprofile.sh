@@ -2,9 +2,9 @@
 
 # Installer des packages supplémentaires
 Rscript -e "
-install.packages(\"BiocManager\", repos = \"https://cloud.r-project.org\")
-BiocManager::install(\"rhdf5\", ask = FALSE)
-install.packages(c(\"bioRad\", \"rstudioapi\"), repos = \"https://cloud.r-project.org\")
+#install.packages(\"BiocManager\", repos = \"https://cloud.r-project.org\")
+#BiocManager::install(\"rhdf5\", ask = FALSE)
+#install.packages(c(\"bioRad\", \"rstudioapi\"), repos = \"https://cloud.r-project.org\")
 "
 
 # Créer un .Rprofile
