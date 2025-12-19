@@ -4,7 +4,6 @@ set -euo pipefail
 init_dir="/home/onyxia/.cache/init"
 mkdir -p "${init_dir}"
 chown -R onyxia:users "${init_dir}"
-chown -R onyxia:users /home/onyxia/.cache/git/credential
 
 cd ${init_dir}
 echo "v1.14.1"
@@ -29,3 +28,5 @@ chmod +x "setup-firacode.sh"
 "./setup-rprofile.sh"
 "./setup-air.sh"
 "./setup-firacode.sh"
+
+chown -R onyxia:users /home/onyxia/.cache/git/credential

@@ -16,7 +16,6 @@ GIT_REPO=$2
 init_dir="/home/onyxia/.cache/init"
 mkdir -p "${init_dir}"
 chown -R onyxia:users "${init_dir}"
-chown -R onyxia:users /home/onyxia/.cache/git/credential
 
 chown onyxia:users "/home/onyxia/.Renviron"
 
@@ -57,4 +56,5 @@ echo "setup lib for proto ok"
 cd "/home/onyxia/work"
 git clone https://TanguyBarthelemy:${GITHUB_TANGUYBARTHELEMY}@github.com/${GIT_ACCOUNT}/${GIT_REPO}.git
 chown -R onyxia:users ${GIT_REPO}/
+chown -R onyxia:users /home/onyxia/.cache/git/credential
 echo "setup git proj ok"
