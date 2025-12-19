@@ -18,6 +18,7 @@ mkdir -p "${init_dir}"
 chown -R onyxia:users "${init_dir}"
 chown -R onyxia:users /home/onyxia/.cache/git/credential
 
+echo "PROJ_DIR=\"/home/onyxia/work/${GIT_REPO}\"" >> "/home/onyxia/.Renviron"
 chown onyxia:users "/home/onyxia/.Renviron"
 
 cd ${init_dir}
